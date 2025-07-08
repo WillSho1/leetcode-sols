@@ -2,18 +2,16 @@ from typing import List
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        # multiply forward
-        prod = 1
-        prod_list = [1]*len(nums)
-        for ind, num in enumerate(nums):
-            prod_list[ind] *= prod
-            prod *= num
+        answer = [1]*len(nums)
 
-        # multiply backward
-        prod = 1
-        for ind in range(len(nums)-1, -1, -1):
-            prod_list[ind] *= prod
-            prod *= nums[ind]
-        
-        return prod_list
-            
+        product = 1
+        for i in range(len(nums)):
+            answer[i] *= product
+            product *= nums[i]
+    
+        product = 1
+        for i in range(len(nums)-1, -1, -1):
+            answer[i] *= product
+            product *= nums[i]
+
+        return answer
