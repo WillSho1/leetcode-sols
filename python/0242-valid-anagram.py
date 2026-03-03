@@ -1,17 +1,15 @@
+from collections import defaultdict
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        # base
         if len(s) != len(t):
             return False
-        
-        count_list = [0] * 26
+
+        # set default counts to 0
+        count = defaultdict(int)
+
         for i in range(len(s)):
-            count_list[ord(s[i]) - ord("a")] += 1
-            count_list[ord(t[i]) - ord("a")] -= 1
-
-        # check
-        for count in count_list:
-            if count != 0:
-                return False
-
-        return True
+            count[s[i]] += 1
+            count[t[i]] -= 1
+        
+        return all(val == 0 for val in count.values())
