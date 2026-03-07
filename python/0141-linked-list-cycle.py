@@ -1,20 +1,14 @@
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+# [DSA] 141. Linked List Cycle
+- **Focus:** Linked Structures (Tier 3)
+- **Source:** LeetCode
+- **Link:** https://leetcode.com/problems/linked-list-cycle/
 
-class Solution:
-    def hasCycle(self, head: Optional[ListNode]) -> bool:
-        # turtle and hare
-        turtle = head
-        hare = head
+## Problem Statement
+Given `head`, the head of a linked list, determine if the linked list has a cycle in it.
 
-        while hare != None and hare.next != None:
-            turtle = turtle.next
-            hare = hare.next.next
+## Approach: Floyd's Tortoise and Hare
+Use two pointers, `slow` and `fast`. Move `slow` by one step and `fast` by two steps. If there is a cycle, the two pointers will eventually meet.
 
-            if turtle == hare:
-                return True
-
-        return False
+```python
+# Solution template for projects/leetcodeSols/python/0141-linked-list-cycle.py
+```
