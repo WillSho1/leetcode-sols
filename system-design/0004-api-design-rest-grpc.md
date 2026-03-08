@@ -7,3 +7,6 @@
 3. What is the impact of HTTP/2 on gRPC performance compared to standard REST implementations?
 
 # TODO (Answer in 3-4 sentences each)
+1. I do not really know what gRPC is so I would not know when to use it over REST.
+2. I would define the output of services and ensure they are consistent between versions.
+3. No clue
