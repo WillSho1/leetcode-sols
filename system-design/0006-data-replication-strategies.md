@@ -1,13 +1,12 @@
-# [System Architecture] 0006-data-replication-strategies.md
-- **Focus:** Data Persistence (Tier 2/3)
-- **Source:** ByteByteGo / General
-- **Link:** https://bytebytego.com/courses/system-design-interview/data-replication
+# Topic: Data Replication Strategies
+# https://bytebytego.com/courses/system-design-interview/data-replication
 
-## Focus: Multi-Leader and Leaderless Replication
-Compare the trade-offs of single-leader, multi-leader, and leaderless (Quorum-based) replication systems.
+### Questions
 
-### Key Concepts
-- Consistency vs Availability (CAP Theorem)
-- Read-your-writes consistency
-- Write conflicts and resolution strategies (LWW, CRDTs)
-- Quorum (N, W, R) configuration
+1. **Leader-Based Replication:** Explain the difference between Synchronous and Asynchronous replication. What is the tradeoff regarding durability vs. latency?
+
+2. **Multi-Leader Replication:** In what scenarios (e.g., multi-datacenter) is this beneficial, and what is the primary complexity it introduces for write operations?
+
+3. **Leaderless Replication (Quorums):** If you have $N$ replicas, what are the values for $W$ (write) and $R$ (read) to ensure a "strict quorum" where at least one node has the latest data?
+
+4. **Conflict Resolution:** When two nodes receive different writes for the same key (Write-Write conflict), what are two common strategies to resolve this?
