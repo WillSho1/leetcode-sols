@@ -8,3 +8,6 @@
 3. Compare a B-Tree index to an LSM-Tree (Log-Structured Merge-Tree). What kind of workloads is an LSM-Tree designed for?
 
 # TODO (Answer in 3-4 sentences each)
+1. I do not know the difference between clustered and non-clustered indices.
+2. If there are heavy write operations, all indices need to be updated for each operation.
+3. I have not heard of a LSM Tree index.
