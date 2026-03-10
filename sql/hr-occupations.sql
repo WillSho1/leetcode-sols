@@ -1,0 +1,2 @@
+-- [HackerRank - Occupations](https://www.hackerrank.com/challenges/occupations/problem)
+-- Goal: Pivot the Occupation column in OCCUPATIONS so that each Name is sorted alphabetically and displayed underneath its corresponding Occupation.
