@@ -1,3 +1,0 @@
--- Problem: Customers Who Never Order
--- URL: https://leetcode.com/problems/customers-who-never-order/
--- Goal: Find all customers who never order anything (Subquery or LEFT JOIN practice)
