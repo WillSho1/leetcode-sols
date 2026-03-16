@@ -1,0 +1,34 @@
+{
+  "history": [
+    {
+      "id": "0042-trapping-rain-water",
+      "category": "DSA",
+      "status": "pending",
+      "timestamp": "2026-03-16T00:00:00Z"
+    },
+    {
+      "id": "0006-cdn-system-design",
+      "category": "Arch",
+      "status": "pending",
+      "timestamp": "2026-03-16T00:00:00Z"
+    },
+    {
+      "id": "hr-recursive-subordinates",
+      "category": "SQL",
+      "status": "pending",
+      "timestamp": "2026-03-16T00:00:00Z"
+    },
+    {
+      "id": "0007-log-rotation-cleanup",
+      "category": "Bash",
+      "status": "pending",
+      "timestamp": "2026-03-16T00:00:00Z"
+    },
+    {
+      "id": "0003-prioritization-conflict",
+      "category": "Behavioral",
+      "status": "pending",
+      "timestamp": "2026-03-16T00:00:00Z"
+    }
+  ]
+}
