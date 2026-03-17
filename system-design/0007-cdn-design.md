@@ -14,3 +14,8 @@
 
 ---
 Reference: https://github.com/donnemartin/system-design-primer#content-delivery-network
+
+### Answers
+1. If they are trying to access the same resource, I would halt the requests after the first cache miss, until the resource has been cached.
+2. I do not know what this means.
+3. I do not know.
