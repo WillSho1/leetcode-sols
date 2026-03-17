@@ -17,5 +17,12 @@ Reference: https://github.com/donnemartin/system-design-primer#content-delivery-
 
 ### Answers
 1. If they are trying to access the same resource, I would halt the requests after the first cache miss, until the resource has been cached.
+
+Request Collapsing (Request Joining). The Edge node should identify that 1,000 requests are asking for the same missing file. It puts 999 on "wait" and sends only one request to the origin. Once it returns, it broadcasts the result to all 1,000 users.
 2. I do not know what this means.
+
+Pull (Query-on-demand). A news site has thousands of articles. "Pushing" every update to every edge node is wasteful (expensive bandwidth). In a Pull model, the content is only cached when a user actually asks for it. Use a short TTL (Time to Live) to ensure news stays fresh.
 3. I do not know.
+
+GeoDNS: The DNS server looks at your IP, looks up your location in a database, and gives you an IP of a server near you. (Decision at DNS level).
+Anycast: Multiple servers across the world share the exact same IP. The internet's routing protocol (BGP) automatically sends your packet to the "closest" server based on network hops. (Decision at Routing level). Anycast is faster and more resilient.

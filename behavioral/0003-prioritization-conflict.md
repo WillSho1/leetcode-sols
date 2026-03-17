@@ -14,5 +14,6 @@ This feels like a very specific example and does not fully apply to me. I have n
 
 I usually put bugs first since these projects are still in dev. Fixing the current bugs is a higher priority than creating new features while we have users actively testing. If the bug is in a non critical section of the form, it can usually wait to be fixed, but if it is a high priority bug, I will target it.
 
+The statistics pipeline bug threatened the core integrity of the data (Uploader), while the UI improvements were enhancements. I prioritized data integrity over aesthetics to maintain system trust during the pilot phase.
 ---
 Reference: https://www.themuse.com/advice/star-method-interview-questions
