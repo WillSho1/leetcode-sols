@@ -1,0 +1,3 @@
+-- hr-recursive-subordinates.sql
+-- Goal: Use a Recursive CTE to find the organization hierarchy.
+-- Reference: https://learnsql.com/blog/sql-cte-interview-questions/
