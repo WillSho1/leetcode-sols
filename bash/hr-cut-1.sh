@@ -1,7 +1,7 @@
 # Problem: Cut - 1
 # Goal: Master extracting characters using the `cut` command.
 
-while read line; do
-    # TODO: Print the 3rd character from each line using `cut -c`
-    pass
+while read -r line;
+do
+    echo "${line}" | cut -c 3
 done
