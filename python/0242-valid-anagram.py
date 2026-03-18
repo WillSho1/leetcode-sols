@@ -3,5 +3,17 @@
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        # TODO: Check if t is an anagram of s using a hash map or sorting
-        pass
+        if len(s) != len(t): return False
+
+        freqDict = {}
+
+        for char in s:
+            freqDict[char] = freqDict.get(char, 0) + 1
+
+        for char in t:
+            if char not in freqDict or freqDict[char] == 0:
+                return False
+            freqDict[char] -= 1
+
+        return True
+        

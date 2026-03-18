@@ -3,5 +3,11 @@
 
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
-        # TODO: Modify nums in-place and return the number of elements not equal to val
-        pass
+        newArray = 0
+
+        for i in range(len(nums)):
+            if nums[i] != val:
+                nums[newArray] = nums[i]
+                newArray += 1
+        
+        return newArray
