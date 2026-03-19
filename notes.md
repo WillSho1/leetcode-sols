@@ -1,31 +1,19 @@
-# Ops Drill: Process & Resource Observation
+SELECT employee_id,
+    CASE
+        WHEN SUBSTRING(name, 1, 1) = "M" OR employee_id%2 = 0 THEN 0
+        ELSE salary
+    END AS bonus
+FROM Employees
+ORDER BY employee_id;
 
-## Task
-Investigate a "mysterious" high-load local system. Practice using foundational observation tools.
+`s/old/new/` substitution in sed.
+uniq -c | sed 's/^ *//'
+sed 's/\bthe\b/this/'
 
-## Reference
-- Missing Semester (CLI Tools): https://missing.csail.mit.edu/2020/command-line/
-
-## Investigation Log
-1. **Tool:** `top` / `htop`
-   - Goal: Identify the top 3 CPU-consuming processes.
-   - Findings:
-
-2. **Tool:** `ps` / `pgrep`
-   - Goal: Find the PID of a specific background process (e.g., your terminal or a browser).
-   - Findings:
-
-3. **Tool:** `journalctl` / `dmesg`
-   - Goal: Check the last 10 lines of the system log for any hardware or kernel alerts.
-   - Findings:
-
-## Reflection
-- Why is `htop` generally preferred over `top` for interactive debugging?
-- What are the 'zombie' processes (Z state)?
 
 | Tool  | What it is               | When to use it                                                                                                                                                                |
 | ----- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | top   | Standard "Task Manager"  | Use for a quick, "bare-bones" look at what's eating your CPU/RAM right now. (Available on every Linux server by default).                                                     |
 | htop  | Interactive task manager | Use this 90% of the time. It’s color-coded, lets you scroll, and allows you to "kill" processes by just highlighting them and pressing F9. Much more human-friendly than top. |
 | ps    | Process Snapshot         | Use when you want a "one-shot" list of everything running (e.g., ps aux). It's static, not live. Great for piping into grep.                                                  |
-| pgrep | Process search           | Use when you just want the PID (Process ID) of a specific program. Instead of `ps aux   
+| pgrep | Process search           | Use when you just want the PID (Process ID) of a specific program. Instead of `ps aux                                                                                         |
