@@ -9,5 +9,14 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        # TODO: Implement fast and slow pointers to detect a cycle
-        pass
+        turtle = head
+        hare = head
+
+        while hare != None and hare.next != None:
+            turtle = turtle.next
+            hare = hare.next.next
+
+            if turtle == hare:
+                return True
+        
+        return False
