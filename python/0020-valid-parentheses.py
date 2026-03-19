@@ -5,15 +5,14 @@
 # Category: DSA (Stack)
 # Status: Pending
 
-class Solution:
-    def isValid(self, s: str) -> bool:
-        stack = []
-        mapping = {'}': '{', ']': '[', ')': '('}
+def isValid(s: str) -> bool:
+    # TODO: Implement using a stack
+    pass
 
-        for char in s:
-            if char in mapping.values():
-                stack.append(char)
-            elif not stack or stack.pop() != mapping[char]:
-                return False
-
-        return not stack
+if __name__ == "__main__":
+    # Test cases
+    print(isValid("()"))      # Expected: True
+    print(isValid("()[]{}"))  # Expected: True
+    print(isValid("(]"))      # Expected: False
+    print(isValid("([)]"))    # Expected: False
+    print(isValid("{[]}"))     # Expected: True
