@@ -4,16 +4,15 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t): return False
-
-        freqDict = {}
+        countDict = {}
 
         for char in s:
-            freqDict[char] = freqDict.get(char, 0) + 1
-
+            countDict[char] = countDict.get(char, 0)+1
+        
         for char in t:
-            if char not in freqDict or freqDict[char] == 0:
+            if char not in countDict or countDict[char] == 0:
                 return False
-            freqDict[char] -= 1
-
+            countDict[char] -= 1
+        
         return True
         

@@ -3,11 +3,11 @@
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        indMap = {}
+        numsDict = {}
 
         for i, num in enumerate(nums):
-            if target-num in indMap:
-                return [indMap[target-num], i]
-            indMap[num] = i
-
+            if target-num in numsDict.keys():
+                return [numsDict[target-num], i]
+            numsDict[num] = i
+        
         return None
