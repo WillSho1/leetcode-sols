@@ -2,19 +2,18 @@
 # Goal: Find two lines that together with the x-axis forms a container, such that the container contains the most water.
 
 class Solution:
-    def maxArea(self, height: List[int]) -> int:
+    def maxArea(self, heights: List[int]) -> int:
         left = 0
-        right = len(height)-1
-        maxWater = 0
+        right = len(heights)-1
+        maxArea = 0
 
         while left < right:
-            water = (right-left) * min(height[left], height[right])
-            maxWater = max(maxWater, water)
+            area = min(heights[left], heights[right])*(right-left)
+            maxArea = max(maxArea, area)
 
-            if height[left] < height[right]:
+            if heights[left] < heights[right]:
                 left += 1
             else:
                 right -= 1
-        
-        return maxWater
+        return maxArea
             
