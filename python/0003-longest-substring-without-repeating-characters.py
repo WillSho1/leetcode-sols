@@ -3,20 +3,17 @@
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        maxLength = 0
-        substringSet = set()
+        subSet = set()
+        left = 0
+        right = 0
+        maxString = 0
 
-        head = 0
-        tail = 0
-
-        while head < len(s):
-            if s[head] not in substringSet:
-                substringSet.add(s[head])
-                maxLength = max(maxLength, head+1-tail)
-                head += 1
-            else:
-                substringSet.remove(s[tail])
-                tail += 1
-
-        return maxLength
-
+        while right < len(s):
+            while s[right] in subSet:
+                subSet.remove(s[left])
+                left += 1
+            subSet.add(s[right])
+            maxString = max(maxString, len(subSet))
+            right += 1
+        
+        return maxString
