@@ -65,3 +65,23 @@ WHERE activity_date BETWEEN DATE_SUB('2019-07-27', INTERVAL 29 DAY) AND '2019-07
 GROUP BY activity_date;
 
 python string.find('char', start, end) -> index
+
+
+SELECT query_name,
+    ROUND(SUM(rating/position)/COUNT(*), 2) AS quality,
+    ROUND(SUM(CASE WHEN rating < 3 THEN 1 ELSE 0 END)/COUNT(*)*100, 2) AS poor_query_percentage
+FROM Queries
+GROUP BY query_name;
+
+truncating sql month - can be used in select/group by
+DATE_FORMAT(date_column, '%Y-%m')
+
+example:
+SELECT DATE_FORMAT(trans_date, '%Y-%m') AS month,
+    country,
+    COUNT(*) AS trans_count,
+    SUM(CASE WHEN state='approved' THEN 1 ELSE 0 END) AS approved_count,
+    SUM(amount) AS trans_total_amount,
+    SUM(CASE WHEN state='approved' THEN amount ELSE 0 END) AS approved_total_amount
+FROM Transactions
+GROUP BY DATE_FORMAT(trans_date, '%Y-%m'), country;
