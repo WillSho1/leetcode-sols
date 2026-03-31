@@ -46,3 +46,22 @@ awk '{
 }'
 
 It seems you have the wrong problem, this was about serving an html file. Anyways, I curled localhost, and it says it was 403 forbidden. I figured this had to do with the file permissions so I checked and it was 600, so I changes it to 644 (rw-r--r--). It seems that the firewall was dropping http connections too in iptables, I did not know how to check this before and had to use the clues. iptables -F removed the rule I think.
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+
+SELECT tweet_id
+FROM Tweets
+WHERE LENGTH(content)>15;
+
+IFNULL, AVG, BETWEEN
+SELECT p.product_id, IFNULL(ROUND(SUM(p.price*u.units)/SUM(u.units), 2), 0) AS average_price
+FROM Prices p
+LEFT JOIN UnitsSold u ON p.product_id=u.product_id AND u.purchase_date BETWEEN p.start_date AND p.end_date
+GROUP BY p.product_id;
+
+DATE_SUB, INTERVAL
+SELECT activity_date as day, COUNT(DISTINCT user_id) as active_users
+FROM Activity
+WHERE activity_date BETWEEN DATE_SUB('2019-07-27', INTERVAL 29 DAY) AND '2019-07-27'
+GROUP BY activity_date;
+
+python string.find('char', start, end) -> index
